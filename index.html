@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Resource Hub - Your Academic Partner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-gradient-bg {
+            background: #0F2027;
+            background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); 
+            background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+        }
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+        }
+        /* Canvas for background animation */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place it behind all content */
+            background-color: #f1f5f9; 
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <canvas id="particle-canvas"></canvas>
+
+    <div id="main-content">
+        <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+            <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+                <a href="#" class="text-2xl sm:text-3xl font-bold text-gray-900">
+                    <span class="text-indigo-600">Academia</span>Vault
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-300">Courses</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-300">About</a>
+                    <a href="#" class="bg-indigo-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition-all duration-300 shadow-md">Login</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                    <i data-feather="menu" class="w-7 h-7 text-gray-700"></i>
+                </button>
+            </nav>
+             <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-lg">
+                <a href="#" class="block py-3 px-6 text-gray-600 hover:bg-gray-100 hover:text-indigo-600">Courses</a>
+                <a href="#" class="block py-3 px-6 text-gray-600 hover:bg-gray-100 hover:text-indigo-600">About</a>
+                <a href="#" class="block py-3 px-6 text-gray-600 hover:bg-gray-100 hover:text-indigo-600">Login</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="relative text-white py-20 md:py-32 hero-gradient-bg">
+                <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-4">Your Ultimate Study Companion</h1>
+                    <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-gray-300">
+                        Dive into a comprehensive library of semester papers, notes, and essential resources. Stop searching, start learning.
+                    </p>
+                    <a href="year-selection.html" class="bg-indigo-500 text-white text-base sm:text-lg font-bold py-3 px-8 sm:py-4 sm:px-10 rounded-full hover:bg-indigo-600 transition-all duration-300 shadow-lg btn-glow transform hover:scale-105">
+                        Get Started Now
+                    </a>
+                </div>
+            </section>
+
+            <section class="py-16 md:py-24 bg-white/90 backdrop-blur-sm">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="text-center mb-12 sm:mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Start Learning in 3 Easy Steps</h2>
+                        <p class="text-gray-600 mt-3 max-w-2xl mx-auto">Accessing the materials you need has never been simpler.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 text-center">
+                        <div class="p-6"><div class="bg-indigo-100 text-indigo-600 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6 shadow-lg"><i data-feather="search" class="w-10 h-10"></i></div><h3 class="text-xl sm:text-2xl font-bold mb-3">1. Find Your Subject</h3><p class="text-gray-600 leading-relaxed">Use our powerful search to instantly find materials for your specific course or subject.</p></div>
+                        <div class="p-6"><div class="bg-indigo-100 text-indigo-600 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6 shadow-lg"><i data-feather="download-cloud" class="w-10 h-10"></i></div><h3 class="text-xl sm:text-2xl font-bold mb-3">2. Download & Study</h3><p class="text-gray-600 leading-relaxed">Download question papers, notes, and guides directly to your device for offline access.</p></div>
+                        <div class="p-6"><div class="bg-indigo-100 text-indigo-600 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6 shadow-lg"><i data-feather="award" class="w-10 h-10"></i></div><h3 class="text-xl sm:text-2xl font-bold mb-3">3. Ace Your Exams</h3><p class="text-gray-600 leading-relaxed">Walk into your exams with confidence, fully prepared with the best resources available.</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features" class="py-16 md:py-24 bg-gray-100/90 backdrop-blur-sm">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="text-center mb-12 sm:mb-16"><h2 class="text-3xl md:text-4xl font-bold text-gray-900">Everything You Need, All in One Place</h2><p class="text-gray-600 mt-3 max-w-2xl mx-auto">We've organized everything to make your study sessions more productive.</p></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover-effect"><div class="bg-blue-100 text-blue-600 rounded-lg h-16 w-16 flex items-center justify-center mb-6"><i data-feather="file-text" class="w-8 h-8"></i></div><h3 class="text-xl sm:text-2xl font-bold mb-3">Semester Papers</h3><p class="text-gray-600 leading-relaxed">Access a vast archive of previous year's semester question papers to ace your exams.</p></div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover-effect"><div class="bg-green-100 text-green-600 rounded-lg h-16 w-16 flex items-center justify-center mb-6"><i data-feather="edit-3" class="w-8 h-8"></i></div><h3 class="text-xl sm:text-2xl font-bold mb-3">Class Test Papers</h3><p class="text-gray-600 leading-relaxed">Prepare for your class tests (CTs) with a collection of papers from various subjects.</p></div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover-effect"><div class="bg-purple-100 text-purple-600 rounded-lg h-16 w-16 flex items-center justify-center mb-6"><i data-feather="book-open" class="w-8 h-8"></i></div><h3 class="text-xl sm:text-2xl font-bold mb-3">Curated Notes</h3><p class="text-gray-600 leading-relaxed">Find well-structured notes contributed by faculty and top students to clarify complex topics.</p></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="container mx-auto px-4 sm:px-6 text-center">
+                <p class="text-base sm:text-lg">&copy; 2024 AcademiaVault. All Rights Reserved.</p>
+                <p class="text-gray-400 mt-2">Made with ❤️ for students, by students.</p>
+                <div class="flex justify-center space-x-6 mt-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-feather="twitter" class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-feather="github" class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-feather="linkedin" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // --- Mobile Menu Logic ---
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuButton.querySelector('i');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isMenuOpen = !mobileMenu.classList.contains('hidden');
+            menuIcon.setAttribute('data-feather', isMenuOpen ? 'x' : 'menu');
+            feather.replace(); // Re-initialize icons to render the new one
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // --- Live Background Animation Logic ---
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray;
+
+        let mouse = {
+            x: null,
+            y: null,
+            radius: (canvas.height/100) * (canvas.width/100)
+        }
+
+        window.addEventListener('mousemove', function(event) {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = 'rgba(100, 116, 139, 0.4)';
+                ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) {
+                    this.directionX = -this.directionX;
+                }
+                if (this.y > canvas.height || this.y < 0) {
+                    this.directionY = -this.directionY;
+                }
+                
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx*dx + dy*dy);
+                if (distance < mouse.radius + this.size){
+                    if(mouse.x < this.x && this.x < canvas.width - this.size * 10){ this.x += 5; }
+                    if(mouse.x > this.x && this.x > this.size * 10){ this.x -= 5; }
+                    if(mouse.y < this.y && this.y < canvas.height - this.size * 10){ this.y += 5; }
+                    if(mouse.y > this.y && this.y > this.size * 10){ this.y -= 5; }
+                }
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 11000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 3) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 0.6) - 0.3;
+                let directionY = (Math.random() * 0.6) - 0.3;
+                let color = '#8C9BAB';
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                                 + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    if (distance < (canvas.width/7) * (canvas.height/7)) {
+                        opacityValue = 1 - (distance/20000);
+                        ctx.strokeStyle = 'rgba(148, 163, 184,' + opacityValue + ')';
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0,0,innerWidth, innerHeight);
+
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connect();
+        }
+
+        window.addEventListener('resize', function(){
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+            mouse.radius = ((canvas.height/100) * (canvas.height/100));
+            init();
+        });
+        
+        window.addEventListener('mouseout', function(){
+            mouse.x = undefined;
+            mouse.y = undefined;
+        });
+
+        init();
+        animate();
+    </script>
+</body>
+</html>

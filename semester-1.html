@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semester 1 Subjects - College Resource Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617; /* Slatier, darker background */
+            /* Enhanced multi-layer background for more depth */
+            background-image: 
+                radial-gradient(at 20% 20%, hsla(212,96%,21%,0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 20%, hsla(260,96%,18%,0.3) 0px, transparent 50%),
+                radial-gradient(at 20% 80%, hsla(320,96%,25%,0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 80%, hsla(180,96%,20%,0.3) 0px, transparent 50%);
+        }
+
+        .subject-card {
+            background-color: rgba(15, 23, 42, 0.6); /* slate-900 with opacity */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 1rem;
+            border: 1px solid #1e293b; /* slate-800 */
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            /* Transition for staggered load animation */
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.4s ease;
+        }
+        
+        /* For Staggered Load Animation */
+        .card-hidden {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Animated Gradient Border */
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 1rem;
+            border: 2px solid transparent;
+            background: conic-gradient(from 180deg at 50% 50%, #7c3aed 0deg, #4f46e5 120deg, #0ea5e9 240deg, #7c3aed 360deg) border-box;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .subject-card:hover::before {
+            opacity: 1;
+            animation: rotate 4s linear infinite;
+        }
+
+        .subject-card:hover {
+             box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .subject-card:hover .cta-arrow {
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+<body class="text-gray-300">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-slate-800/50">
+        <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <a href="./index.html" class="text-xl sm:text-2xl font-bold">
+                <span class="text-indigo-400">Academia</span>Vault
+            </a>
+            <a href="first-year.html" class="text-sm font-medium text-gray-400 hover:text-white transition-colors flex items-center">
+                <i data-feather="arrow-left" class="w-4 h-4 mr-2"></i>
+                Back to Semesters
+            </a>
+        </nav>
+    </header>
+
+    <main class="min-h-screen flex flex-col justify-center items-center pt-28 pb-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">Semester I Subjects</h1>
+                <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">Click on a subject to explore the materials and resources.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+                
+                <a href="calculus-details.html"  class="subject-link card-hidden" data-tilt data-tilt-max="5" data-tilt-scale="1.02" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="subject-card p-6">
+                        <div class="bg-blue-500/10 text-blue-300 rounded-lg p-3 w-min mb-4"><i data-feather="bar-chart-2"></i></div>
+                        <h2 class="text-xl font-bold text-white">Calculus & Linear Algebra</h2>
+                        <p class="text-sm text-gray-400 mt-2 flex-grow">Core concepts of derivatives, integrals, and vector algebra.</p>
+                        <span class="mt-4 text-sm text-indigo-400 font-semibold flex items-center">View Materials <i data-feather="arrow-right" class="w-4 h-4 ml-1 cta-arrow"></i></span>
+                    </div>
+                </a>
+
+                <a href="chemistry-details.html"  class="subject-link card-hidden" data-tilt data-tilt-max="5" data-tilt-scale="1.02" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="subject-card p-6">
+                        <div class="bg-green-500/10 text-green-300 rounded-lg p-3 w-min mb-4"><i data-feather="flask-conical"></i></div>
+                        <h2 class="text-xl font-bold text-white">Chemistry</h2>
+                        <p class="text-sm text-gray-400 mt-2 flex-grow">Atomic structure, chemical bonding, and periodic properties.</p>
+                        <span class="mt-4 text-sm text-indigo-400 font-semibold flex items-center">View Materials <i data-feather="arrow-right" class="w-4 h-4 ml-1 cta-arrow"></i></span>
+                    </div>
+                </a>
+                
+                <a href="philosophy-of-engineering-details.html"  class="subject-link card-hidden" data-tilt data-tilt-max="5" data-tilt-scale="1.02" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="subject-card p-6">
+                        <div class="bg-yellow-500/10 text-yellow-300 rounded-lg p-3 w-min mb-4"><i data-feather="book-open"></i></div>
+                        <h2 class="text-xl font-bold text-white">Philosophy Of Engineering</h2>
+                        <p class="text-sm text-gray-400 mt-2 flex-grow">Exploring the ethics and societal impact of technology.</p>
+                        <span class="mt-4 text-sm text-indigo-400 font-semibold flex items-center">View Materials <i data-feather="arrow-right" class="w-4 h-4 ml-1 cta-arrow"></i></span>
+                    </div>
+                </a>
+
+                <a href="computational-biology-details.html"  class="subject-link card-hidden" data-tilt data-tilt-max="5" data-tilt-scale="1.02" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="subject-card p-6">
+                        <div class="bg-purple-500/10 text-purple-300 rounded-lg p-3 w-min mb-4"><i data-feather="dna"></i></div>
+                        <h2 class="text-xl font-bold text-white">Intro to Computational Biology</h2>
+                        <p class="text-sm text-gray-400 mt-2 flex-grow">Applying computational methods to biological data.</p>
+                        <span class="mt-4 text-sm text-indigo-400 font-semibold flex items-center">View Materials <i data-feather="arrow-right" class="w-4 h-4 ml-1 cta-arrow"></i></span>
+                    </div>
+                </a>
+
+                <a href="programming-details.html"  class="subject-link card-hidden" data-tilt data-tilt-max="5" data-tilt-scale="1.02" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="subject-card p-6">
+                        <div class="bg-red-500/10 text-red-300 rounded-lg p-3 w-min mb-4"><i data-feather="code"></i></div>
+                        <h2 class="text-xl font-bold text-white">Programming For Problem Solving</h2>
+                        <p class="text-sm text-gray-400 mt-2 flex-grow">Fundamentals of C programming and logical problem-solving.</p>
+                        <span class="mt-4 text-sm text-indigo-400 font-semibold flex items-center">View Materials <i data-feather="arrow-right" class="w-4 h-4 ml-1 cta-arrow"></i></span>
+                    </div>
+                </a>
+                
+                <a href="economics-details.html"  class="subject-link card-hidden" data-tilt data-tilt-max="5" data-tilt-scale="1.02" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="subject-card p-6">
+                        <div class="bg-indigo-500/10 text-indigo-300 rounded-lg p-3 w-min mb-4"><i data-feather="dollar-sign"></i></div>
+                        <h2 class="text-xl font-bold text-white">Fundamental Of Economics</h2>
+                        <p class="text-sm text-gray-400 mt-2 flex-grow">Principles of microeconomics and macroeconomics.</p>
+                        <span class="mt-4 text-sm text-indigo-400 font-semibold flex items-center">View Materials <i data-feather="arrow-right" class="w-4 h-4 ml-1 cta-arrow"></i></span>
+                    </div>
+                </a>
+                
+                <a href="biomedical-sensors-details.html"  class="subject-link card-hidden" data-tilt data-tilt-max="5" data-tilt-scale="1.02" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="subject-card p-6">
+                        <div class="bg-pink-500/10 text-pink-300 rounded-lg p-3 w-min mb-4"><i data-feather="activity"></i></div>
+                        <h2 class="text-xl font-bold text-white">Biomedical Sensors</h2>
+                         <p class="text-sm text-gray-400 mt-2 flex-grow">Transducers and sensors used in medical applications.</p>
+                        <span class="mt-4 text-sm text-indigo-400 font-semibold flex items-center">View Materials <i data-feather="arrow-right" class="w-4 h-4 ml-1 cta-arrow"></i></span>
+                    </div>
+                </a>
+                
+                 <a href="foreign-languages-details.html"  class="subject-link card-hidden" data-tilt data-tilt-max="5" data-tilt-scale="1.02" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="subject-card p-6">
+                        <div class="bg-cyan-500/10 text-cyan-300 rounded-lg p-3 w-min mb-4"><i data-feather="globe"></i></div>
+                        <h2 class="text-xl font-bold text-white">Foreign Languages</h2>
+                         <p class="text-sm text-gray-400 mt-2 flex-grow">Basic communication skills in a new language.</p>
+                        <span class="mt-4 text-sm text-indigo-400 font-semibold flex items-center">View Materials <i data-feather="arrow-right" class="w-4 h-4 ml-1 cta-arrow"></i></span>
+                    </div>
+                </a>
+                
+                 <a href="cell-biology-details.html"  class="subject-link card-hidden" data-tilt data-tilt-max="5" data-tilt-scale="1.02" data-tilt-speed="400" data-tilt-perspective="1000">
+                    <div class="subject-card p-6">
+                        <div class="bg-lime-500/10 text-lime-300 rounded-lg p-3 w-min mb-4"><i data-feather="aperture"></i></div>
+                        <h2 class="text-xl font-bold text-white">Cell Biology</h2>
+                         <p class="text-sm text-gray-400 mt-2 flex-grow">The structure and function of cells and organelles.</p>
+                        <span class="mt-4 text-sm text-indigo-400 font-semibold flex items-center">View Materials <i data-feather="arrow-right" class="w-4 h-4 ml-1 cta-arrow"></i></span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
+
+    <script>
+        // Feather Icons initialization
+        feather.replace();
+
+        // Staggered Load Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card-hidden');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.remove('card-hidden');
+                }, 100 * (index + 1)); // Delay each card by 100ms
+            });
+        });
+    </script>
+</body>
+</html>

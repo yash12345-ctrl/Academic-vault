@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Year - College Resource Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark background */
+        }
+        .year-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-radius: 1.5rem; /* 24px */
+        }
+        .year-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+        }
+        .year-card .card-content {
+            position: relative;
+            z-index: 10;
+        }
+        .year-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--start-color), var(--end-color));
+            opacity: 0.9;
+            transition: opacity 0.4s ease;
+        }
+        .year-card:hover::before {
+            opacity: 1;
+        }
+        .year-card .icon-wrapper {
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            opacity: 0.1;
+            transform: rotate(-20deg);
+            transition: transform 0.5s ease;
+        }
+        .year-card:hover .icon-wrapper {
+            transform: rotate(-10deg) scale(1.1);
+        }
+    </style>
+</head>
+<body class="text-white">
+
+    <header class="bg-gray-900/50 backdrop-blur-lg absolute top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <a href="./index.html" class="text-2xl sm:text-3xl font-bold">
+                <span class="text-indigo-400">Academia</span>Vault
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="font-medium hover:text-indigo-400 transition-colors duration-300">Courses</a>
+                <a href="#" class="font-medium hover:text-indigo-400 transition-colors duration-300">About</a>
+                <a href="#" class="bg-indigo-500 text-white px-5 py-2 rounded-lg font-semibold hover:bg-indigo-600 transition-all duration-300 shadow-lg">Login</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <i data-feather="menu" class="w-7 h-7"></i>
+            </button>
+        </nav>
+         <div id="mobile-menu" class="hidden md:hidden bg-gray-800/80 backdrop-blur-lg">
+            <a href="#" class="block py-3 px-6 hover:bg-gray-700">Courses</a>
+            <a href="#" class="block py-3 px-6 hover:bg-gray-700">About</a>
+            <a href="#" class="block py-3 px-6 hover:bg-gray-700">Login</a>
+        </div>
+    </header>
+
+    <main class="min-h-screen flex flex-col justify-center items-center pt-28 pb-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">Choose Your Path</h1>
+                <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">Each year is a new adventure. Select yours to begin.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+                
+                <a href="first-year.html" class="year-card bg-gray-900" style="--start-color: #3b82f6; --end-color: #60a5fa;">
+                    <div class="p-6 sm:p-8 h-56 flex flex-col justify-between card-content">
+                        <div>
+                            <span class="text-sm font-semibold opacity-70">YEAR 01</span>
+                            <h2 class="text-3xl sm:text-4xl font-bold mt-1">The Foundation</h2>
+                        </div>
+                        <p class="opacity-80">Start with the essentials.</p>
+                    </div>
+                    <div class="icon-wrapper text-blue-300 text-[100px] sm:text-[120px]"><i data-feather="book-open"></i></div>
+                </a>
+
+                <a href="second-year.html" class="year-card bg-gray-900" style="--start-color: #10b981; --end-color: #34d399;">
+                    <div class="p-6 sm:p-8 h-56 flex flex-col justify-between card-content">
+                        <div>
+                            <span class="text-sm font-semibold opacity-70">YEAR 02</span>
+                            <h2 class="text-3xl sm:text-4xl font-bold mt-1">The Deep Dive</h2>
+                        </div>
+                        <p class="opacity-80">Explore your specialization.</p>
+                    </div>
+                    <div class="icon-wrapper text-green-300 text-[100px] sm:text-[120px]"><i data-feather="layers"></i></div>
+                </a>
+
+                <a href="comingsoon.html" class="year-card bg-gray-900" style="--start-color: #f59e0b; --end-color: #fbbf24;">
+                    <div class="p-6 sm:p-8 h-56 flex flex-col justify-between card-content">
+                        <div>
+                            <span class="text-sm font-semibold opacity-70">YEAR 03</span>
+                            <h2 class="text-3xl sm:text-4xl font-bold mt-1">The Mastery</h2>
+                        </div>
+                        <p class="opacity-80">Refine your advanced skills.</p>
+                    </div>
+                    <div class="icon-wrapper text-yellow-300 text-[100px] sm:text-[120px]"><i data-feather="award"></i></div>
+                </a>
+
+                <a href="comingsoon.html" class="year-card bg-gray-900" style="--start-color: #ef4444; --end-color: #f87171;">
+                    <div class="p-6 sm:p-8 h-56 flex flex-col justify-between card-content">
+                        <div>
+                            <span class="text-sm font-semibold opacity-70">YEAR 04</span>
+                            <h2 class="text-3xl sm:text-4xl font-bold mt-1">The Launch</h2>
+                        </div>
+                        <p class="opacity-80">Prepare for your career.</p>
+                    </div>
+                    <div class="icon-wrapper text-red-300 text-[100px] sm:text-[120px]"><i data-feather="trending-up"></i></div>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // --- Mobile Menu Logic ---
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuButton.querySelector('i');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isMenuOpen = !mobileMenu.classList.contains('hidden');
+            menuIcon.setAttribute('data-feather', isMenuOpen ? 'x' : 'menu');
+            feather.replace({ width: '1em', height: '1em' }); // Re-initialize icons
+        });
+
+        // Initialize Feather Icons with custom size
+        feather.replace({
+            width: '1em',
+            height: '1em'
+        });
+    </script>
+</body>
+</html>

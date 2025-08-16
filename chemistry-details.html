@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry - College Resource Hub</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #2c1a4d;
+            background-image: radial-gradient(circle at 1% 1%, rgba(255,255,255,0.05) 1px, transparent 1px),
+                              radial-gradient(circle at 99% 99%, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .details-container {
+            background-color: #1e1b34;
+            border-radius: 1rem;
+            border: 1px solid #4c1d95;
+            box-shadow: 0 0 30px rgba(76, 29, 149, 0.5);
+        }
+        .resource-link {
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+        }
+        .resource-link:hover {
+            background-color: rgba(139, 92, 246, 0.1);
+            color: #c4b5fd;
+        }
+        .back-btn {
+            background-color: rgba(139, 92, 246, 0.2);
+            border: 1px solid #8b5cf6;
+            transition: background-color 0.3s ease;
+        }
+        .back-btn:hover {
+            background-color: rgba(139, 92, 246, 0.4);
+        }
+    </style>
+</head>
+<body class="text-white">
+
+    <!-- Header -->
+    <header class="bg-transparent absolute top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="./index.html" class="text-3xl font-bold">
+                <span class="text-violet-400">Academia</span>Vault
+            </a>
+            <a href="./semester-1.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors flex items-center">
+                <i data-feather="arrow-left" class="w-4 h-4 mr-2"></i>
+                Back to Subjects
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="min-h-screen flex flex-col justify-center items-center pt-32 pb-16">
+        <div class="container mx-auto px-6">
+            
+            <div class="details-container p-8 md:p-12 max-w-6xl mx-auto">
+                <!-- Subject Title -->
+                <div class="text-center mb-10">
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-violet-300">Chemistry</h1>
+                    <a href="#" class="text-gray-400 mt-2 inline-flex items-center text-sm hover:text-white">
+                        <i data-feather="info" class="w-4 h-4 mr-2"></i>View Syllabus
+                    </a>
+                </div>
+
+                <!-- Resources Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-300">
+                    
+                    <!-- Column 1: Previous Year Questions -->
+                    <div class="border-t-2 border-violet-500 pt-4">
+                        <h2 class="text-lg font-bold mb-4 text-white">Previous Year Questions</h2>
+                        <div class="space-y-1">
+                            <a href="#" class="resource-link flex justify-between items-center"><span>PYQ May 2024</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            <a href="#" class="resource-link flex justify-between items-center"><span>PYQ May 2023</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            <a href="#" class="resource-link flex justify-between items-center"><span>PYQ Jan 2023</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            <a href="#" class="resource-link flex justify-between items-center"><span>PYQ May 2019</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            <a href="#" class="resource-link flex justify-between items-center"><span>PYQ Nov 2018</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            <a href="#" class="resource-link flex justify-between items-center"><span>More PYQs</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            <a href="#" class="resource-link flex justify-between items-center"><span>PYQ CT Papers</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            <a href="#" class="resource-link flex justify-between items-center"><span>MCQs For All Units</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            <a href="#" class="resource-link flex justify-between items-center"><span>Important Questions: CTs and SEM</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Study Notes & Resources -->
+                    <div class="border-t-2 border-violet-500 pt-4">
+                        <h2 class="text-lg font-bold mb-4 text-white">Study Notes & Other Resources</h2>
+                        <div class="space-y-1">
+                            <a href="#" class="resource-link flex justify-between items-center"><span>Chapter 1: Periodic Properties</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            <a href="#" class="resource-link flex justify-between items-center"><span>Chapter 2: Use Of Free Energy...</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            <a href="#" class="resource-link flex justify-between items-center"><span>Chapter 3: Stereo Chemistry And...</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            <a href="#" class="resource-link flex justify-between items-center"><span>Chapter 4: Polymers</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            <a href="#" class="resource-link flex justify-between items-center"><span>Chapter 5: Advanced Engineering...</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            <a href="#" class="resource-link flex justify-between items-center"><span>BEST NOTES</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            <a href="#" class="resource-link flex justify-between items-center"><span>Study Material Drive Link</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Exam Strategies -->
+                    <div class="border-t-2 border-violet-500 pt-4">
+                        <h2 class="text-lg font-bold mb-4 text-white">Exam Strategies & General Suggestions</h2>
+                        <div class="space-y-1">
+                            <p class="text-xs text-gray-500 p-3">Note: These are just suggestions collected by surveying many students, follow at your own risk!</p>
+                            <p class="text-gray-400 p-3">Strategies coming soon</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Back Buttons -->
+                <div class="mt-12 flex justify-center space-x-4">
+                    <a href="./semester-1.html" class="back-btn text-white font-semibold py-2 px-5 rounded-lg">Back to Subjects</a>
+                    <a href="first-year.html" class="back-btn text-white font-semibold py-2 px-5 rounded-lg">Back to Semesters</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
+</body>
+</html>

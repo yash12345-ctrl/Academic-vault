@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus & Linear Algebra - College Resource Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #2c1a4d;
+            background-image: radial-gradient(circle at 1% 1%, rgba(255,255,255,0.05) 1px, transparent 1px),
+                              radial-gradient(circle at 99% 99%, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .details-container {
+            position: relative;
+            background: linear-gradient(145deg, #23273a, #1e1b34);
+            border-radius: 1rem;
+            padding: 2px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .details-container::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            background: linear-gradient(120deg, #8b5cf6, #4c1d95, #8b5cf6);
+            z-index: 1;
+            transition: filter 0.5s ease;
+        }
+        .details-container:hover::before {
+            filter: blur(5px);
+        }
+        .details-container-inner {
+            background: #1e1b34;
+            border-radius: calc(1rem - 2px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .resource-link {
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+        }
+        .resource-link:hover {
+            background-color: rgba(139, 92, 246, 0.1);
+            color: #c4b5fd;
+        }
+        .back-btn {
+            background-color: rgba(139, 92, 246, 0.2);
+            border: 1px solid #8b5cf6;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Make buttons full width on small screens */
+        }
+        .back-btn:hover {
+            background-color: rgba(139, 92, 246, 0.4);
+        }
+
+        @media (min-width: 640px) {
+            .back-btn {
+                width: auto; /* Revert to auto width on larger screens */
+            }
+        }
+    </style>
+</head>
+<body class="text-white">
+
+    <header class="bg-transparent absolute top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 py-6 flex justify-between items-center">
+            <a href="./index.html" class="text-2xl sm:text-3xl font-bold">
+                <span class="text-violet-400">Academia</span>Vault
+            </a>
+            <a href="./semester-1.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors flex items-center">
+                <i data-feather="arrow-left" class="w-4 h-4 mr-2"></i>
+                Back to Subjects
+            </a>
+        </nav>
+    </header>
+
+    <main class="min-h-screen flex flex-col justify-center items-center pt-28 pb-16">
+        <div class="container mx-auto px-4 sm:px-6 w-full">
+            
+            <div class="details-container max-w-6xl mx-auto">
+                <div class="details-container-inner p-6 sm:p-8 md:p-12">
+                    <div class="text-center mb-10">
+                        <h1 class="text-3xl sm:text-4xl font-extrabold text-violet-300">Calculus And Linear Algebra</h1>
+                        <a href="#" class="text-gray-400 mt-2 inline-flex items-center text-sm hover:text-white">
+                            <i data-feather="info" class="w-4 h-4 mr-2"></i>View Syllabus
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 text-gray-300">
+                        
+                        <div>
+                            <h2 class="text-lg font-bold mb-4 text-white">Previous Year Questions</h2>
+                            <div class="space-y-1">
+                                <a href="#" class="resource-link flex justify-between items-center"><span>PYQ Dec 2023</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>PYQ Jan 2023</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>PYQ May 2022</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>PYQ May 2019</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>PYQ Nov 2018</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>LT 1,2,3 Compilation</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>MCQ Bank 1 to 5</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>Important Topics</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>Catwise list Updated Rev 2024</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-700 mt-8 pt-8 md:border-t-0 md:mt-0 md:pt-0 md:border-l md:border-r md:px-8">
+                            <h2 class="text-lg font-bold mb-4 text-white">Study Notes & Other Resources</h2>
+                            <div class="space-y-1">
+                                <a href="#" class="resource-link flex justify-between items-center"><span>Chapter 1: Matrices</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>Ch1 Previous Handouts</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>Chapter 2: Ordinary Differential Equations</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>Chapter 3: Differential Calculus...</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>Gamma Functions</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>Chapter 5: Sequence And Series</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-700 mt-8 pt-8 md:border-t-0 md:mt-0 md:pt-0">
+                            <h2 class="text-lg font-bold mb-4 text-white">Exam Strategies & General Suggestions</h2>
+                            <div class="space-y-1">
+                                <p class="text-xs text-gray-500 p-3">Note: These are just suggestions. You are free to not follow or follow at your own risk.</p>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>Mid/End Semester Exam Strategies</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                                <a href="#" class="resource-link flex justify-between items-center"><span>Sem Exam General Rules</span><i data-feather="eye" class="w-4 h-4"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-12 flex flex-col sm:flex-row justify-center items-center w-full max-w-xs sm:max-w-none mx-auto sm:w-auto gap-4">
+                        <a href="./semester-1.html" class="back-btn text-white font-semibold py-2 px-5 rounded-lg text-center">Back to Subjects</a>
+                        <a href="first-year.html" class="back-btn text-white font-semibold py-2 px-5 rounded-lg text-center">Back to Semesters</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
+</body>
+</html>
